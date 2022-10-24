@@ -10,12 +10,26 @@
 <body>
     <div id="header">Yıldırım Library</div>
     <div id="sidebar">
-        <div id="addBook">Add Book</div>
+        <div id="addBook">
+            <div class="sideBarMenu">Add Book</div> 
+            <form name="addBookForm" class="subMenu">
+                <label for="bookNameInput">Name:</label>
+                <input type="text" name="bookName" id="bookNameInput"><br>
+                <label for="bookAuthorInput">Author:</label>
+                <input type="text" name="author" id="bookAuthorInput"><br>
+                <label for="bookPageInput">Pages:</label>
+                <input type="number" name="bookPage" id="bookPageInput"><br>
+                <label for="bookReadStatusInput">Did you read?:</label>
+                <input type="checkbox" name="bookReadStatus" id="bookReadStatusInput"><br>
+                <button type="submit">Add it</button>
+            </form>
+        </div>
         <div id="categories">Categories</div>
         <div id="filters">Filters</div>
     </div>
     <div id="content">
         <div class="book">Title</div>  
     </div>
+    <script src="library.js"></script>
 </body>
 </html>

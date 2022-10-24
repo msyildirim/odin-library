@@ -26,12 +26,26 @@ body {
  grid-area: header;
  background-color: blue;
 }
-
+/*Sidebar*/
 #sidebar{
     grid-area: sidebar;
     background-color: yellow;
+    padding-left: 0.3rem;
 }
-
+#sidebar label {
+    font-family: Arial;
+    font-size: 0.75rem;
+}
+.sideBarMenu {
+    cursor: pointer;
+}
+.subMenu {
+    display: none;
+}
+.subMenu.show {
+    display: block;
+}
+/*Content*/
 #content{
  padding-top: 10px;
  grid-area: content;
