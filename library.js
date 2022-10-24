@@ -23,7 +23,6 @@ document.querySelectorAll(".sideBarMenu").forEach((menu)=>{
 const addBookForm = document.forms.addBookForm;
 addBookForm.onsubmit = function(event){
     let bookName = addBookForm.bookName.value;
-    console.log(bookName);
     let author = addBookForm.author.value;
     let bookPage = addBookForm.bookPage.value;
     let readStatus = addBookForm.bookReadStatus.value;
@@ -38,14 +37,21 @@ function displayBook(book){
     const content = document.querySelector("#content");
     let bookElement = document.createElement("div");
     bookElement.classList.add("book");
-    bookElement.innerHTML = `${book.bookName} 
-    ${book.author}
-    ${book.page}`;
+    bookElement.dataset.bookname = book.bookName;
+    bookElement.innerHTML = `${book.bookName}<br> 
+    ${book.author}<br>
+    ${book.page}<br>
+    <button class="removeBookButton" onclick="removeBook(this)">Remove</button>`;
     content.append(bookElement);
 };
 
-/* function displayAllBooks(){
+function displayAllBooks(){
     myLibrary.forEach((book)=>{
         displayBook(book);
     })
-} */
+}
+
+function removeBook(element){
+    console.log(element.parentElement.dataset.bookname);
+    element.parentElement.remove();
+}
